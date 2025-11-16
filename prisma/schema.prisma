@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+  previewFeatures = ["typedSql"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator zod {
+  provider = "prisma-zod-generator"
+  config   = "./zod-gen-config.json"
+}
